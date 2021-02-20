@@ -59,4 +59,6 @@
 
 .error {
     border: red 3px solid; 
+    color: red;
+    padding-left: 10px;
 }
