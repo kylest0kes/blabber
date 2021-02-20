@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import './pagestyle.css';
 
 export default function SignUp() {
+    const validateUserInfo = (e) => {
+        e.preventDefault();
+        console.log('works');
+    }
+
     return (
         <div>
             <form className="form" id="form">
@@ -31,7 +36,7 @@ export default function SignUp() {
                     <Link to="/login" className="to-login">already have an account?</Link>
                 </div>
 
-                <button className="btn" type="submit">sign up</button>
+                <button onClick={validateUserInfo} className="btn" type="submit">sign up</button>
             </form>
         </div>
     )
