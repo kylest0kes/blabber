@@ -6,11 +6,11 @@ import useForm from '../hooks/useForm';
 import './pagestyle.css';
 
 export default function SignUp() {
-    const {handleChange, userValues} = useForm();
+    const {handleChange, userValues, handleSubmit} = useForm();
 
     return (
         <div>
-            <form className="form" id="form" >
+            <form className="form" id="form" onSubmit={handleSubmit}>
                 <div className="form__group">
                     <input type="text" placeholder="Username" className="form__input" name="username" id="username" value={userValues.username} onChange={handleChange} />
                     <small></small>
