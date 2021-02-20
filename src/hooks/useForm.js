@@ -11,6 +11,8 @@ const useForm = () => {
 
     const [errors, setErrors] = useState({});
 
+    const [isUserValid, setIsUserValid] = useState(false);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -22,9 +24,15 @@ const useForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('submit');
         setErrors(validateUserInfo(userValues));
+        setIsUserValid(true)
     }
+
+    useEffect(() => {
+        if(Object.keys(errors).length === 0 && isUserValid == true) {
+            console.log('valid submit')
+        }
+    }, [errors])
 
     return { handleChange, userValues, handleSubmit, errors };
 }
