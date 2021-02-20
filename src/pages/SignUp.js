@@ -1,34 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useForm from '../hooks/useForm';
+
 
 import './pagestyle.css';
 
 export default function SignUp() {
-    const validateUserInfo = (e) => {
-        e.preventDefault();
-        console.log('works');
-    }
+    const {handleChange, userValues} = useForm();
 
     return (
         <div>
-            <form className="form" id="form">
+            <form className="form" id="form" >
                 <div className="form__group">
-                    <input type="text" placeholder="Username" className="form__input" name="username" id="username" />
+                    <input type="text" placeholder="Username" className="form__input" name="username" id="username" value={userValues.username} onChange={handleChange} />
                     <small></small>
                 </div>
             
                 <div className="form__group">
-                    <input type="email" placeholder="Email" className="form__input" name="email" id="email" />
+                    <input type="email" placeholder="Email" className="form__input" name="email" id="email" value={userValues.email} onChange={handleChange}/>
                     <small></small>
                 </div>
 
                 <div className="form__group">
-                    <input type="password" placeholder="Password" className="form__input" name="password" id="password"/>
+                    <input type="password" placeholder="Password" className="form__input" name="password" id="password" value={userValues.password} onChange={handleChange}/>
                     <small></small>
                 </div>
 
                 <div className="form__group">
-                    <input type="password" placeholder="Re-enter Password" className="form__input" name="confirm-password" id="confirm-password"/>
+                    <input type="password" placeholder="Re-enter Password" className="form__input" name="confirmedPassword" id="confirmedPassword" value={userValues.passwordConfirmed} onChange={handleChange}/>
                     <small></small>
                 </div>
 
@@ -36,7 +35,7 @@ export default function SignUp() {
                     <Link to="/login" className="to-login">already have an account?</Link>
                 </div>
 
-                <button onClick={validateUserInfo} className="btn" type="submit">sign up</button>
+                <button className="btn" type="submit">sign up</button>
             </form>
         </div>
     )
