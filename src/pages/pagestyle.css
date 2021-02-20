@@ -1,0 +1,62 @@
+.form {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 6px;
+    overflow: hidden;
+    width: 40%;
+    box-shadow: 5px 5px 5px gray;
+    background-color: white; 
+}
+  
+  .form__input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    transition: 0.3s; 
+}
+
+.form__input:focus {
+    background: #f7f7f7; 
+}
+  
+.btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+    -webkit-appearance: none;
+    outline: 0;
+    border: 0;
+    color: white;
+    background: #ABA194;
+    transition: 0.3s; 
+}
+
+.btn:hover {
+    background: #a09486;
+    cursor: grab; 
+}
+
+.su-li-link {
+    width: 100%; 
+}
+
+.to-login {
+    float: right;
+    padding: 10px;
+    color: black; 
+}
+
+.error {
+    border: red 3px solid; 
+}
