@@ -3,7 +3,7 @@ export default function validateUserInfo(userValues) {
     const complexPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
     let errors = {};
 
-    if(!username) {
+    if(!username || username.trim() == '') {
         errors.username = "Username Required";
     } 
 
